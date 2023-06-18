@@ -1,0 +1,135 @@
+﻿<Window x:Class="WpfPrcts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPrcts"
+        xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="580" Width="820" WindowState="Normal"     ResizeMode="NoResize"     >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height=" 6*"/>
+            <RowDefinition Height=" *" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row=" 0" Margin=" 5 5 5 50" >
+            <MenuItem Header="File" FontSize=" 25" Background="Red" IsChecked="True"   >
+                <Separator Background=" blue"/>
+                <ToolBar >
+                    <Border BorderThickness=" 2" BorderBrush ="Black"   >
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Name="NameOfText" Text="..." FontSize ="15" Margin=" 15 3"/>
+                            <Button FontSize=" 15" Margin=" 15 3"  Click="OpenButton_Click" >
+                                <Image Height=" 20" Width=" 20" Source=" https://d29fhpw069ctt2.cloudfront.net/icon/image/39098/preview.png"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness=" 2" BorderBrush ="Black" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Save" FontSize ="15" Margin="15 3"/>
+                            <CheckBox Name="IsAutoSaveActive" Margin=" 15 3"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness=" 2" BorderBrush ="Black" >
+                        <StackPanel Orientation="Horizontal" >
+                            <Button Content="Cut" FontSize=" 15" Margin=" 15 3" Click="CutButton_Click" />
+                            <Button Content="Copy" FontSize=" 15" Margin=" 15 3" Click="CopyButton_Click" />
+                            <Button Content="Paste" FontSize=" 15" Margin=" 15 3" Click="PasteButton_Click" />
+                            <Button Content="Select all" FontSize=" 15" Margin=" 15 3" Click="SelectAllButton_Click" />
+                        </StackPanel>
+                    </Border>
+
+
+                </ToolBar>
+
+
+
+            </MenuItem>
+
+            <MenuItem Header="Home " FontSize=" 20" Background="Green" >
+                <ToolBar >
+                    <Button Content="B" FontWeight="Bold" FontSize=" 15" Margin="5 3" Click="BoldButton_Click"  />
+                    <Button Content="I" FontStyle="Italic"  FontSize="15" Margin="5 3"/>
+                    <Button Content="U"  FontSize=" 15" Margin="5 3 "/>
+
+                    <StackPanel Height="25" >
+                        <ComboBox Width="50" Height="20" Name="ComboFont" FontSize=" 20"  ScrollViewer.VerticalScrollBarVisibility="Auto"  >
+                            <Label Content=" 8"/>
+                            <Label Content=" 12"/>
+                            <Label Content=" 14"/>
+                            <Label Content=" 16"/>
+                            <Label Content=" 18"/>
+                            <Label Content=" 20"/>
+                            <Label Content=" 25"/>
+                            <Label Content=" 30"/>
+                            <Label Content=" 40"/>
+                            <Label Content=" 50"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <!--Color Sechimi-->
+                    <StackPanel Height="25" >
+                        <ComboBox Width="50" Height="25" Name="ComboForeColor" FontSize=" 20" 
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"  >
+                            <Label Content="red"/>
+                            <Label Content="green"/>
+                            <Label Content="yellow"/>
+                            <Label Content="black"/>
+                            <Label Content="white"/>
+                            <Label Content="cyan"/>
+                            <Label Content="magenta"/>
+                            <Label Content="violet"/>
+                            <Label Content="purple"/>
+                            <Label Content="orange"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!--<Slider Maximum=" 255" Minimum=" 0"/>-->
+
+
+                    <WrapPanel  Height=" 25" Width=" 75" >
+                        <ComboBox Width="100" Height="25" Name="ComboBackColor" FontSize=" 20" 
+                              >
+
+                            <Label Background="Red"  Height="10" Width="10" Margin=" 3"/>
+                            <Label Background="Yellow"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Black"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="White"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Violet"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Blue"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="SkyBlue"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Green"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Magenta"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Cyan"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="RosyBrown"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Bisque"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Magenta"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Cyan"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="RosyBrown"   Height=" 10" Width=" 10" Margin=" 3"/>
+                            <Label Background="Bisque"   Height=" 10" Width=" 10" Margin=" 3"/>
+
+                        </ComboBox>
+                    </WrapPanel>
+
+                    <Button >
+                        <Image Height=" 20" Width=" 20" Source=" https://thumbs.dreamstime.com/b/text-alignment-icon-white-background-text-align-set-left-right-center-justify-line-text-position-sign-alignment-text-198488708.jpg"/>
+                    </Button>
+
+
+                </ToolBar>
+            </MenuItem>
+            <MenuItem Header="Insert"></MenuItem>
+            <MenuItem Header="Page Layout"></MenuItem>
+
+        </Menu>
+        <TextBox  Grid.Row=" 1" Name="MainText" TextChanged="SaveButton_Click"/>
+
+        <StatusBar Grid.Row=" 2">
+            <Label Content="Melumat verirem sdksdhksds"/>
+        </StatusBar>
+
+    </Grid>
+
+</Window>
